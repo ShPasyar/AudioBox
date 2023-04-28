@@ -1,0 +1,48 @@
+for Audio play from SD card:
+
+1-Connect your SD Module to ESP32(see images for more info).
+
+2-Write your Audio Files in 'wav' or 'pcm' format on SD card.
+
+3-Insert: #include <AudioBox.h>  at first line.
+
+4-Insert: "SD_check()" in setup to monitor SD card Module if you need.
+
+5-see Serial Monitor for SD card Initialization if you need.
+
+6-Insert: <sd_play(FileName)> in your main code Anywhere you need to play Audio.
+
+7-Connect DAC pin(Pin 25 or 26 on ESP32 Dev kit or equivalent on your board(set in <User_Config.h>) to 
+audio amplifire(such as LM386) and Speaker.
+
+8-for more info see <SD Player> example. 
+---------------------------------------------------------------------------------------------------
+for Audio Play from internal Memory(Flash memory):
+
+
+1-convert your audio file to Mono, 8000 Samples, unsigned 8bit by softs such as <Audacity>(one of best choice open sourse software). 
+
+2-convert Audio file(Result from Audacity) to Array by softs such as <HxD>(one of good open source software in internet for this manner).
+
+3-paste your Array file as a header file(h extention) in the location of your Arduino code and include it to your main code.
+
+4-see "Flash Player" example for more detail.
+
+*Warning: as limition of internal flash memory, your arrays must be more small as possible to do this job.
+----------------------------------------------------------------------------------------------------
+for Aduio record on SD card:
+
+
+1-see "Audio Recorder" examples for more info.
+
+2-do not forget to insert <record_initialize()> in setup() section of your Arduino code.
+
+*AudioBox records audio as 16000 samples/sec,mono,8bit resulation and wave standard file(able to play on PC or many standard audio players)
+
+
+enjoy....
+
+
+With respect: Shahryar Pasyar
+shahryarpasyar@gmail.com
+instagram:@shp.electronics
